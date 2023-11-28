@@ -1,0 +1,36 @@
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    long long n, mini = 1000000001, maxi = -1, i, a, rest;
+    
+    cin >> n;
+    
+    for(i = 1; i <= n; i ++)
+    {
+        cin >> a;
+        
+        if(a > maxi)
+        {
+            maxi = a;    
+        }
+        
+        if(a < mini)
+        {
+            mini = a;
+        }
+    }
+    
+    while(mini != 0)
+    {
+        rest = maxi % mini;
+        maxi = mini;
+        mini = rest;
+    }
+    
+    cout << maxi;
+    
+    return 0;
+}
